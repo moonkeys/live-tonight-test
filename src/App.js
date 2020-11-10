@@ -7,17 +7,18 @@ import Prestations from "./components/Prestations";
 import Cagnotte from "./components/Cagnotte";
 import Avis from "./components/Avis";
 
-
 function App() {
   return (
-    <div className="App">
+    <div>
       <Menu></Menu>
       <Profil />
-      <Presentation />
-      <Repertoire />
-      <Prestations />
-      <Cagnotte />
-      <Avis/>
+      <div className="App">
+        <Presentation />
+        <Repertoire />
+        <Prestations />
+        <Cagnotte />
+        <Avis />
+      </div>
     </div>
   );
 }

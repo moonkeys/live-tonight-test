@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Button } from "semantic-ui-react";
+import { Menu, Button, Popup, Header } from "semantic-ui-react";
 
 export default class MenuExampleStackable extends Component {
   state = {};
@@ -10,38 +10,47 @@ export default class MenuExampleStackable extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu stackable>
-        <Menu.Item
-          name="features"
-          active={activeItem === "features"}
-          onClick={this.handleItemClick}
-        >
-          LIVE TONIGHT
+      <Menu fixed="top" stackable>
+        <Menu.Item header>
+          {/* <p style={{color:"#3CE295"}}>LIVE </p> TONIGHT */}
+          <Header as="h1"><a style={{color:"#3CE295"}}>LIVE</a>TONIGHT </Header>
         </Menu.Item>
 
         <Menu.Menu position="right">
-          <Menu.Item
-            name="contact"
-            active={activeItem === "contact"}
-            onClick={this.handleItemClick}
-          >
-            <Button content="NOUS CONTACTER" basic />
+          <Menu.Item name="contact">
+            <Popup
+              content={
+                <div>
+                  <p> Vous cherchez des musiciens pour votre événement ?</p>
+                  <p>Appelez-nous au</p>
+                  <p>
+                    <b>06 69 78 09 98</b>
+                  </p>
+                  <p>
+                    {" "}
+                    ou consultez notre{" "}
+                    <a href="https://au-secours.livetonight.fr/">
+                      centre d'aide
+                    </a>
+                  </p>
+                </div>
+              }
+              on="click"
+              pinned
+              position="bottom center"
+              trigger={<Button content="Nous contacter" />}
+            />
           </Menu.Item>
 
           <Menu.Item
             name="devis"
-            active={activeItem === "devis"}
-            onClick={this.handleItemClick}
+            link="https://www.livetonight.fr/demande-de-devis/groupe-musique-dj"
           >
-            DEVIS
+            DEVIS{" "}
           </Menu.Item>
 
-          <Menu.Item
-            name="sign-in"
-            active={activeItem === "sign-in"}
-            onClick={this.handleItemClick}
-          >
-            <Button content="CONNEXION//INSCRIPTION" primary />
+          <Menu.Item name="sign-in">
+            <Button content="CONNEXION//INSCRIPTION" color="blue" />
           </Menu.Item>
         </Menu.Menu>
       </Menu>

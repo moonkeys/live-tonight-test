@@ -1,15 +1,16 @@
 import { Parallax } from "react-parallax";
 import React, { Component } from "react";
 import InfosPratiques from "./InfosPratiques";
-import { Header, Segment, Grid, Embed, Image } from "semantic-ui-react";
+import { Segment, Grid, Embed, Image } from "semantic-ui-react";
+import {StyledHeader} from "./StyledComponent/StyledHeader"
 
 export default class Presentation extends Component {
   render() {
     return (
       <div>
-        <Header as="h1" attached="top" dividing>
+        <StyledHeader as="h1" attached="top" dividing>
           Présentation
-        </Header>{" "}
+        </StyledHeader>{" "}
         <Grid columns={2} divided>
           <Grid.Column>
             <Segment attached>

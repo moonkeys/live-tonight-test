@@ -1,6 +1,7 @@
 .App {
   /* text-align: center; */
-  padding: 0vh 25vh
+  padding: 0vh 25vh;
+  font-family: "BAHNSCHRIFT";
 }
 
 .App-logo {
@@ -29,11 +30,8 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  font-family: "Impact";
+  letter-spacing: 0.1rem;
+  color: #484848;
 }
