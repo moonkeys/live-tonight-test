@@ -4,16 +4,17 @@ import Presentation from "./components/Presentation";
 import Profil from "./components/Profil";
 import Repertoire from "./components/Repertoire";
 import Prestations from "./components/Prestations";
-
+import Cagnotte from "./components/Cagnotte";
 
 function App() {
   return (
     <div className="App">
       <Menu></Menu>
       <Profil />
-      <Presentation/>
-      <Repertoire/>
-      <Prestations/>
+      <Presentation />
+      <Repertoire />
+      <Prestations />
+      <Cagnotte />
     </div>
   );
 }
