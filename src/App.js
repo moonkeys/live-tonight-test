@@ -12,6 +12,7 @@ function App() {
     <div>
       <Menu></Menu>
       <Profil />
+      <div style={{padding:"3vh"}}></div>
       <div className="App">
         <Presentation />
         <Repertoire />

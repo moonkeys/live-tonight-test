@@ -1,30 +1,30 @@
 import React from "react";
-import { Card, Feed } from "semantic-ui-react";
+import { Card, Feed, Icon } from "semantic-ui-react";
 
 const InfosPratiques = () => (
-  <Card>
+  <Card style={{padding: "0px !important"}}>
     <Card.Content>
       <Card.Header>Informations Pratiques</Card.Header>
     </Card.Content>
     <Card.Content>
       <Feed>
         <Feed.Event>
-          <Feed.Label image="/images/avatar/small/jenny.jpg" />
+        <Icon name='home' size='big' />
           <Feed.Content>Paris, France (peut se déplacer)</Feed.Content>
         </Feed.Event>
 
         <Feed.Event>
-          <Feed.Label image="/images/avatar/small/molly.png" />
+        <Icon name='microphone' size='big' />
           <Feed.Content>Jazz / Guinguette / Swing</Feed.Content>
         </Feed.Event>
 
         <Feed.Event>
-          <Feed.Label image="/images/avatar/small/elliot.jpg" />
+        <Icon name='music' size='big' />
           <Feed.Content>Reprise: Oui</Feed.Content>
         </Feed.Event>
 
         <Feed.Event>
-          <Feed.Label image="/images/avatar/small/elliot.jpg" />
+        <Icon name='settings' size='big' />
           <Feed.Content>Matériel: Matériel d'amplification fourni</Feed.Content>
         </Feed.Event>
       </Feed>

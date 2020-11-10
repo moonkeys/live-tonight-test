@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Button, Popup, Header } from "semantic-ui-react";
+import { Menu, Button, Popup, Header, Icon } from "semantic-ui-react";
 
 export default class MenuExampleStackable extends Component {
   state = {};
@@ -13,7 +13,9 @@ export default class MenuExampleStackable extends Component {
       <Menu fixed="top" stackable>
         <Menu.Item header>
           {/* <p style={{color:"#3CE295"}}>LIVE </p> TONIGHT */}
-          <Header as="h1"><a style={{color:"#3CE295"}}>LIVE</a>TONIGHT </Header>
+          <Header as="h1">
+            <a style={{ color: "#3CE295" }}>LIVE</a>TONIGHT{" "}
+          </Header>
         </Menu.Item>
 
         <Menu.Menu position="right">
@@ -38,7 +40,12 @@ export default class MenuExampleStackable extends Component {
               on="click"
               pinned
               position="bottom center"
-              trigger={<Button content="Nous contacter" />}
+              trigger={
+                <Button basic>
+                  <Icon name="phone" />
+                  Nous contacter
+                </Button>
+              }
             />
           </Menu.Item>
 

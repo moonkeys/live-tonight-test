@@ -2,17 +2,26 @@ import { Parallax } from "react-parallax";
 import React, { Component } from "react";
 import InfosPratiques from "./InfosPratiques";
 import { Segment, Grid, Embed, Image } from "semantic-ui-react";
-import {StyledHeader} from "./StyledComponent/StyledHeader"
+import { StyledHeader } from "./StyledComponent/StyledHeader";
 
 export default class Presentation extends Component {
+  state = {
+    afficher: false,
+  };
+
+  handleClick = (e) => this.setState({ afficher: !this.state.afficher });
   render() {
+    const afficherStyle = {
+      color: "#3CE295",
+      textDecoration: " underline #3CE295",
+    };
     return (
       <div>
-        <StyledHeader as="h1" attached="top" dividing>
+        <StyledHeader as="h2" attached="top" dividing>
           Présentation
         </StyledHeader>{" "}
-        <Grid columns={2} divided>
-          <Grid.Column>
+        <Grid columns={2} divided fluid>
+          <Grid.Column width={10}>
             <Segment attached>
               <p>
                 {" "}
@@ -23,21 +32,33 @@ export default class Presentation extends Component {
                 !{" "}
               </p>
               <p>
-                {" "}
                 Egalement chanteurs, ils vous entrainent dans l'euphorie des
                 années 30-50 en intégrant à leur répertoire les succès
                 indémodables des Andrews Sisters, The Chordettes, Cats & The
                 Fiddle, etc.
-              </p>{" "}
-              <p>
-                {" "}
-                Dyslexic Swing & The Silent Brocoli dispose du materiel
-                nécéssaire pour sonoriser les espaces de tout type et se déplace
-                partout en France pour animer de nombreux événements :
-                festivals, concerts privés, cocktails. Benjamin Ramòn (guitare,
-                chant), Noémie Le Borgne (violon, chant), Jean Barthomier
-                (guitare, chant), Elaine Beaumont (contrebasse, chant).{" "}
+                {this.state.afficher === false && (
+                  <div onClick={this.handleClick} style={afficherStyle}>
+                    {" "}
+                    en savoir plus{" "}
+                  </div>
+                )}{" "}
               </p>
+
+              {this.state.afficher === true && (
+                <p>
+                  Dyslexic Swing & The Silent Brocoli dispose du materiel
+                  nécéssaire pour sonoriser les espaces de tout type et se
+                  déplace partout en France pour animer de nombreux événements :
+                  festivals, concerts privés, cocktails. Benjamin Ramòn
+                  (guitare, chant), Noémie Le Borgne (violon, chant), Jean
+                  Barthomier (guitare, chant), Elaine Beaumont (contrebasse,
+                  chant).{" "}
+                  <div onClick={this.handleClick} style={afficherStyle}>
+                    {" "}
+                    réduire{" "}
+                  </div>
+                </p>
+              )}
               <Grid columns="three" divided>
                 <Grid.Row>
                   <Grid.Column>
@@ -69,17 +90,13 @@ export default class Presentation extends Component {
             </Segment>
           </Grid.Column>
 
-          <Grid.Column>
-            <Grid.Column>
-              <InfosPratiques />
-            </Grid.Column>
-
-            <Grid.Column>
-              <Image
-                src="https://res.cloudinary.com/dcyafbpoh/image/upload/v1602770254/gif-services2.gif"
-                size="medium"
-              ></Image>
-            </Grid.Column>
+          <Grid.Column width={6}>
+            <InfosPratiques />
+            <Image
+              src="https://res.cloudinary.com/dcyafbpoh/image/upload/v1602770254/gif-services2.gif"
+              size="medium"
+              style={{ padding: "0px !important" }}
+            ></Image>
           </Grid.Column>
         </Grid>
       </div>
