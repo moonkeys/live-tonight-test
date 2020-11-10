@@ -5,7 +5,7 @@ export default class Prestations extends Component {
   render() {
     return (
       <div>
-        <Header as="h1" attached="top">
+        <Header as="h1" dividing>
           Cagnotte Livetonight{" "}
         </Header>{" "}
         <Grid>

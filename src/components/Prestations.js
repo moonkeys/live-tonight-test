@@ -7,6 +7,8 @@ import {
   Form,
   TextArea,
   Divider,
+  Icon,
+  Popup,
 } from "semantic-ui-react";
 
 import SemanticDatepicker from "react-semantic-ui-datepickers";
@@ -64,9 +66,20 @@ export default function Prestations() {
     },
   ];
 
+  const buttonStyle = {
+    color: "white",
+    background: "#3CE295",
+    borderRadius: "100px",
+    padding: "10px 30px",
+  };
+
+  const headerStyle = {
+    color: "#3CE295",
+  };
+
   return (
     <div>
-      <Header as="h1" attached="top">
+      <Header as="h1" dividing>
         Prestations standards
       </Header>{" "}
       <Grid>
@@ -77,19 +90,47 @@ export default function Prestations() {
             columns="equal"
             centered
           >
-            <Grid.Column width="5">
-              <Header>{prestation.formation}</Header>
+            <Grid.Column width="6">
+              <Header style={headerStyle}>{prestation.formation}</Header>
               <p>{prestation.description}</p>
             </Grid.Column>
-            <Grid.Column>{prestation.nbMusiciens}</Grid.Column>
-            <Grid.Column>{prestation.tempsPresta} </Grid.Column>
-            <Grid.Column>à partir de {prestation.prix}</Grid.Column>
+            <Grid.Column textAlign="center">
+              <Icon size="huge" name="user"></Icon> <br />
+              {prestation.nbMusiciens}
+            </Grid.Column>
+            <Grid.Column textAlign="center">
+              <Icon size="huge" name="time"></Icon>
+              <br />
+              {prestation.tempsPresta}{" "}
+            </Grid.Column>
+            <Grid.Column textAlign="center">
+              <Icon size="huge" name="eur"></Icon> <br />à partir de
+              {prestation.prix}{" "}
+              <Popup
+                content={
+                  <div>
+                    Il s'agit du{" "}
+                    <font color="purple !important">prix standard </font> . Le
+                    prix pourra varier en fonction de la durée de la prestation,
+                    des frais de transport ou encore du matériel supplémentaire
+                    à prévoir.
+                  </div>
+                }
+                pinned
+                position="bottom center"
+                trigger={<Icon name="info circle"></Icon>}
+              />
+            </Grid.Column>
             <Grid.Column>
               <Modal
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 open={open}
-                trigger={<Button>Contacter</Button>}
+                trigger={
+                  <Button size="medium" style={buttonStyle}>
+                    Contacter
+                  </Button>
+                }
                 size="small"
               >
                 <Modal.Header

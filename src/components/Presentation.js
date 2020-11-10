@@ -1,7 +1,7 @@
 import { Parallax } from "react-parallax";
 import React, { Component } from "react";
 import InfosPratiques from "./InfosPratiques";
-import { Segment, Grid, Embed, Image } from "semantic-ui-react";
+import { Divider, Grid, Embed, Image } from "semantic-ui-react";
 import { StyledHeader } from "./StyledComponent/StyledHeader";
 
 export default class Presentation extends Component {
@@ -15,14 +15,19 @@ export default class Presentation extends Component {
       color: "#3CE295",
       textDecoration: " underline #3CE295",
     };
+
+    const segmentStyle = {
+      border: "none !important",
+      boxShadow: "none !important",
+    };
     return (
       <div>
         <StyledHeader as="h2" attached="top" dividing>
           Présentation
         </StyledHeader>{" "}
-        <Grid columns={2} divided fluid>
-          <Grid.Column width={10}>
-            <Segment attached>
+        <Divider clearing />
+        <Grid columns={2} style={segmentStyle} fluid>
+          <Grid.Column width={12}>
               <p>
                 {" "}
                 Créé en 2015 dans l'esprit du Hot Club de France, Dyslexic Swing
@@ -87,10 +92,9 @@ export default class Presentation extends Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-            </Segment>
           </Grid.Column>
 
-          <Grid.Column width={6}>
+          <Grid.Column width={4}>
             <InfosPratiques />
             <Image
               src="https://res.cloudinary.com/dcyafbpoh/image/upload/v1602770254/gif-services2.gif"

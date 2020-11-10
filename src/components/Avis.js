@@ -25,7 +25,9 @@ export default class Avis extends Component {
       {
         profil: "L'or et le châteaux",
         imageProfil: `https://res.cloudinary.com/dcyafbpoh/image/upload/c_fill,f_auto,g_auto,h_80,q_auto:eco,w_80/avatar4Fichier_4.svg`,
-        commentaire: "",
+        commentaire: `En tant qu’organisatrice de mariages, j'ai recommandé à mes mariés les talents de Dyslexic Swing & The Silent Brocoli. Ils ont été ravis de la prestation et leurs invités également \r
+        Leur musique a offert beaucoup de fraîcheur et de rythme durant le cocktail. Un vrai bonheur ! \r
+        Je continuerai de recommander leurs services avec plaisir !`,
         date: "octobre 2019",
         note: 5,
       },
@@ -88,10 +90,15 @@ export default class Avis extends Component {
 
     return (
       <div>
-        <Header as="h1" attached="top">
+        <Header as="h1" dividing>
           Avis
         </Header>{" "}
-        <Rating icon="star" defaultRating={moyenneNotes} maxRating={5} />{" "}
+        <Rating
+          icon="star"
+          defaultRating={moyenneNotes}
+          maxRating={5}
+          disabled
+        />{" "}
         {moyenneNotes} -{listeAvis.length} avis
         <Grid>
           {listeAvis.map((avis) => (
@@ -125,6 +132,7 @@ export default class Avis extends Component {
                       icon="star"
                       defaultRating={avis.note}
                       maxRating={5}
+                      disabled
                     />
                   </Grid.Row>
                 </Grid.Row>{" "}

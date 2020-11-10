@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Segment } from "semantic-ui-react";
+import { Header } from "semantic-ui-react";
 
 export default class Repertoire extends Component {
   render() {
@@ -27,16 +27,16 @@ export default class Repertoire extends Component {
     ];
     return (
       <div>
-        <Header as="h1" attached="top" dividing>
+        <Header as="h1" className="header" dividing>
           Aperçu du répertoire
         </Header>{" "}
-        <Segment attached>
+        <div>
           {repertoire.map((musique) => (
             <p>
               {musique.artiste} - {musique.musique}{" "}
             </p>
           ))}
-        </Segment>
+        </div>
       </div>
     );
   }

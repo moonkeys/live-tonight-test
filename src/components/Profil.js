@@ -10,12 +10,14 @@ export default class Profil extends Component {
     return (
       <div
         style={{
-          maxWidth: "100%",
-          height: "auto",
-          padding: "0px !important",
+          height: " 360px",
+          zIndex: "1",
+          backgroundSize: "cover !important",
+          backgroundPosition: "center",
+          backgroundImage: `linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url(${imageParallax})`,
         }}
       >
-        <Parallax
+        {/* <Parallax
           blur={{ min: -15, max: 15 }}
           bgImage={imageParallax}
           bgImageAlt="the dog"
@@ -23,7 +25,7 @@ export default class Profil extends Component {
         >
           Blur transition from min to max
           <div style={{ padding: "0px 5vh", height: "50vh" }} />
-        </Parallax>
+        </Parallax> */}
         <div
           style={{
             position: "absolute",
