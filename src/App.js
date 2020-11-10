@@ -5,6 +5,8 @@ import Profil from "./components/Profil";
 import Repertoire from "./components/Repertoire";
 import Prestations from "./components/Prestations";
 import Cagnotte from "./components/Cagnotte";
+import Avis from "./components/Avis";
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Repertoire />
       <Prestations />
       <Cagnotte />
+      <Avis/>
     </div>
   );
 }
