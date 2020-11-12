@@ -167,6 +167,7 @@ export default class Avis extends Component {
               <Grid.Column>
                 <Grid.Row>
                   {avis.commentaire}
+                  <Divider hidden />
                   <Grid.Row>
                     <p style={dateStyle}>
                       {" "}
@@ -182,7 +183,13 @@ export default class Avis extends Component {
                 </Grid.Row>{" "}
               </Grid.Column>
             </Grid.Row>{" "}
-            <Divider clearing />{" "}
+            <hr
+              style={{
+                color: "#AAB7B8",
+                width: "75%",
+                borderTop: "dashed 0.2vh",
+              }}
+            />
           </Grid>
         ))}
       </div>

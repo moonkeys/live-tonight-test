@@ -84,8 +84,9 @@ export default function Prestations() {
         Prestations standards
       </StyledHeader>{" "}
       <Divider clearing />
-      <Grid>
-        {prestations.map((prestation) => (
+      {prestations.map((prestation) => (
+        <Grid>
+          {" "}
           <Grid.Row
             textAlign="center"
             verticalAlign="middle"
@@ -202,8 +203,15 @@ export default function Prestations() {
               </Modal>
             </Grid.Column>
           </Grid.Row>
-        ))}
-      </Grid>
+          <hr
+            style={{
+              color: "#AAB7B8",
+              width: "75%",
+              borderTop: "dashed 0.15vh",
+            }}
+          />
+        </Grid>
+      ))}
     </div>
   );
 }
