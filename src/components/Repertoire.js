@@ -1,40 +1,55 @@
 import React, { Component } from "react";
-import { Header } from "semantic-ui-react";
+import { Icon, Divider } from "semantic-ui-react";
+import { StyledHeader } from "./StyledComponent/StyledHeader";
+
+const repertoire = [
+  {
+    artiste: "Shoo Shoo Baby",
+    musique: "Andrew Sisters",
+    link: "dyR_bhpB6LY",
+  },
+  {
+    artiste: "Songe d’Automne",
+    musique: "Archibald Joyce",
+    link: "3Q_dT_yJ8ec",
+  },
+  {
+    artiste: "Topsy ",
+    musique: "Basie",
+    link: "Zl7CITge_5A",
+  },
+  {
+    artiste: "Place Du Tertre",
+    musique: " Bireli Lagrene",
+    link: "G5LRuBstTFY",
+  },
+  {
+    artiste: "Ma Premiere Guitare",
+    musique: "Brousolle-Distel",
+    link: "kvVZGQf-AaU",
+  },
+];
 
 export default class Repertoire extends Component {
   render() {
-    const repertoire = [
-      {
-        artiste: "Shoo Shoo Baby",
-        musique: "Andrew Sisters",
-      },
-      {
-        artiste: "Songe d’Automne",
-        musique: "Archibald Joyce",
-      },
-      {
-        artiste: "Topsy ",
-        musique: "Basie",
-      },
-      {
-        artiste: "Place Du Tertre",
-        musique: " Bireli Lagrene",
-      },
-      {
-        artiste: "Ma Premiere Guitare",
-        musique: "Brousolle-Distel",
-      },
-    ];
     return (
-      <div>
-        <Header as="h1" className="header" dividing>
+      <div style={{ padding: "2vh 0vh" }}>
+        <StyledHeader as="h1" dividing>
           Aperçu du répertoire
-        </Header>{" "}
+        </StyledHeader>{" "}
+        <Divider clearing />
         <div>
           {repertoire.map((musique) => (
-            <p>
+            <div>
               {musique.artiste} - {musique.musique}{" "}
-            </p>
+              <a
+                target="_blank"
+                href={"https://www.youtube.com/watch?v=" + musique.link}
+              >
+                {" "}
+                <Icon name="youtube play" link color="red" />
+              </a>
+            </div>
           ))}
         </div>
       </div>

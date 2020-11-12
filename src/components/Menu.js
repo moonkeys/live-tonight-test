@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Menu, Button, Popup, Header, Icon } from "semantic-ui-react";
+import { StyledHeader } from "./StyledComponent/StyledHeader";
 
 export default class MenuExampleStackable extends Component {
   state = {};

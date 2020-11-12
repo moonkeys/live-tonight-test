@@ -1,4 +1,3 @@
-import { Parallax } from "react-parallax";
 import React, { Component } from "react";
 import InfosPratiques from "./InfosPratiques";
 import { Divider, Grid, Embed, Image } from "semantic-ui-react";
@@ -21,8 +20,8 @@ export default class Presentation extends Component {
       boxShadow: "none !important",
     };
     return (
-      <div>
-        <StyledHeader as="h2" attached="top" dividing>
+      <div style={{padding:"2vh 0vh"}}>
+        <StyledHeader as="h1" >
           Présentation
         </StyledHeader>{" "}
         <Divider clearing />

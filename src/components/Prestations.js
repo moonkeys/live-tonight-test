@@ -13,6 +13,7 @@ import {
 
 import SemanticDatepicker from "react-semantic-ui-datepickers";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
+import { StyledHeader } from "./StyledComponent/StyledHeader";
 
 export default function Prestations() {
   const [open, setOpen] = React.useState(false);
@@ -78,10 +79,11 @@ export default function Prestations() {
   };
 
   return (
-    <div>
-      <Header as="h1" dividing>
+    <div style={{ padding: "2vh 0vh" }}>
+      <StyledHeader as="h1" dividing>
         Prestations standards
-      </Header>{" "}
+      </StyledHeader>{" "}
+      <Divider clearing />
       <Grid>
         {prestations.map((prestation) => (
           <Grid.Row

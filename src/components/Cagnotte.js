@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import { Header, Button, Grid, GridColumn } from "semantic-ui-react";
+import { Header, Divider, Grid, Icon } from "semantic-ui-react";
+import { StyledHeader } from "./StyledComponent/StyledHeader";
 
 export default class Prestations extends Component {
   render() {
+    const colorStyle = { color: "#3CE295" };
     return (
-      <div>
-        <Header as="h1" dividing>
+      <div style={{ padding: "2vh 0vh" }}>
+        <StyledHeader as="h1" dividing>
           Cagnotte Livetonight{" "}
-        </Header>{" "}
+        </StyledHeader>{" "}
+        <Divider clearing />
         <Grid>
           <Grid.Row
             textAlign="center"
@@ -15,16 +18,22 @@ export default class Prestations extends Component {
             columns="equal"
             centered
           >
+            <Grid.Column width="2">
+              <Icon
+                size="massive"
+                name="birthday cake"
+                style={colorStyle}
+              ></Icon>
+            </Grid.Column>
             <Grid.Column width="5">
-              <Grid.Column>icone birthday</Grid.Column>
-              <Grid.Column>
-                <Header>Dyslexic Swing & The Silent Brocoli</Header>
-                <p>
-                  Solliciter vos invités via un "chapeau digital" pour profiter
-                  d'une prestation musicale lors de votre événement. <br></br>
-                  Le prix final sera fixé après discussion avec le musicien.
-                </p>
-              </Grid.Column>
+              <Header style={colorStyle}>
+                Dyslexic Swing & The Silent Brocoli
+              </Header>
+              <p>
+                Solliciter vos invités via un "chapeau digital" pour profiter
+                d'une prestation musicale lors de votre événement. <br></br>
+                Le prix final sera fixé après discussion avec le musicien.
+              </p>
             </Grid.Column>
             <Grid.Column textAlign="center">
               <Header>1.</Header>Contactez et échangez avec le musicien.
